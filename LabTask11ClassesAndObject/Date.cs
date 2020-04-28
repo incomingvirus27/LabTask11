@@ -13,8 +13,7 @@ namespace LabTask11ClassesAndObject
         {
             Day = theDay;
             Month = theMonth;
-            Year = theYear;
-            Console.WriteLine($"Date Construtor Called {this}");
+            Year = theYear;          
         }
 
         public int Month

@@ -11,7 +11,7 @@ namespace LabTask11ClassesAndObject
             Date xdate = new Date(7, 9, 2017);
 
             Sales sales = new Sales("che", 78, 15000m, 7000m, "Africa");
-            Medicine medicine = new Medicine("hcl", "Panadol", "Levintis", 60m, 500, mdate, xdate, 6789);
+            Medicine medicine = new Medicine("hcl", "Panadol", "Levintis", 60m, 0, mdate, xdate, 6789);
 
             Console.WriteLine("Novertis Pharma Ltd.");
 
