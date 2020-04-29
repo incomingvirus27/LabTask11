@@ -6,29 +6,25 @@ namespace LabTask11ClassesAndObject
 {
     class Sales
     {
-        private string medCode;
+        public string MedCode { get; set; }
         private int quantitySold;
         private decimal sales;
         private decimal actualSales;
-        private string region;
+        public string Region { get; set; }
 
         public Sales(string medCode, int quantSold, decimal sales, decimal actualSales, string region)
         {
             MedCode = medCode;
-            QuantitySold = quantitySold;
+            QuantitySold = quantSold;
             PlannedSales = sales;
             ActualSales = actualSales;
             Region = region;
         }
-        public string MedCode
-        {
-            get { return medCode; }
-            set { medCode = value; }
-        }
+       
         public int QuantitySold
         {
             get { return quantitySold; }
-            set
+            private set
             {
                 if (value >= 0)
                 {
@@ -43,7 +39,7 @@ namespace LabTask11ClassesAndObject
         public decimal PlannedSales
         {
             get { return sales; }
-            set
+            private set
             {
                 if (value > 0)
                 {
@@ -53,12 +49,13 @@ namespace LabTask11ClassesAndObject
                 {
                     throw new ArgumentOutOfRangeException("Please the planned sales cannot be 0");
                 }
+                
             }
         }
         public decimal ActualSales
         {
             get { return actualSales; }
-            set
+            private set
             {
                 if (value > 0)
                 {
@@ -68,20 +65,17 @@ namespace LabTask11ClassesAndObject
                 {
                     throw new ArgumentOutOfRangeException("Please the planned sales cannot be 0");
                 }
+                
             }
         }
-        public string Region
-        {
-            get { return region; }
-            set { region = value; }
-        }
+        
         public void Display()
         {
             Console.WriteLine($"Medicine Code: {MedCode}\nQuantity sold: {QuantitySold}\nPlanned sales: {PlannedSales}\nActual sales: {ActualSales}\nRegion: {Region}");
         }
-        public string Display(decimal PlannedSales, decimal ActualSales)
+        public void Display(decimal PlannedSales, decimal ActualSales)
         {
-            return  $"Planned sales: {PlannedSales}\nActual Sales: {ActualSales}: {PlannedSales - ActualSales}";
+            Console.WriteLine($"Planned sales: {PlannedSales}\nActual Sales: {ActualSales}: the difference between the planned sales and the actual sales is {PlannedSales - ActualSales}");
         }
        
     }

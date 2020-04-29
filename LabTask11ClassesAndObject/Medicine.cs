@@ -6,47 +6,30 @@ namespace LabTask11ClassesAndObject
 {
     class Medicine
     {
-        private string medCode;
-        private string medName;
-        private string manName;
+        public string MedCode { get; set; }
+        private string MedName { get; set; }
+        public string ManCode { get; set; }
         private decimal unitPrice;
         private int quant;
         public Date ManDate { get; set; }
         public Date ExpDate { get; set; }
-        private int batchNum;
+        private int batchNum { get; set; }
 
-        public Medicine(string medCode, string medName, string manName, decimal unitPrice, int quant, Date manDate, Date expDate, int batchNum)
+        public Medicine(string medCode, string medName, string manCode, decimal unitPrice, int quant, Date manDate, Date expDate, int batchNum)
         {
             MedCode = medCode;
             MedName = medName;
-            ManName = manName;
+            ManCode = manCode;
             UnitPrice = unitPrice;
             Quantity = quant;
             ManDate = manDate;
             ExpDate = expDate;
             BatchNum = batchNum;
         }
-
-        public string MedCode
-        {
-            get { return medCode; }
-            set { medCode = value; }
-        }
-        public string MedName
-        {
-            get { return medName; }
-            set { medName = value; }
-        }
-        public string ManName
-        {
-            get { return manName; }
-            set { manName = value; }
-        }
-
         public decimal UnitPrice
         {
             get { return unitPrice; }
-            set
+            private set
             {
                 if (value > 0)
                 {
@@ -61,7 +44,7 @@ namespace LabTask11ClassesAndObject
         public int Quantity
         {
             get { return quant; }
-            set 
+            private set 
             { 
                 if(value >= 0)
                 {
@@ -69,7 +52,7 @@ namespace LabTask11ClassesAndObject
                 }
                 else
                 {
-                    throw new ArgumentOutOfRangeException("Please the quantiity of items cannot be less than 0");
+                    throw new ArgumentOutOfRangeException("Please the quantity of items cannot be less than 0");
                 }
             }
         }
@@ -82,7 +65,7 @@ namespace LabTask11ClassesAndObject
 
         public void Print()
         {
-            Console.WriteLine($"Medicine Code: {MedCode}\nMedicine Name: {MedName}\nManufacturer Name: {ManName}\nUnit Price: {UnitPrice:c}\nQuantity in stock: {Quantity}\nManufactured Date: {ManDate}\nExpiry Date: {ExpDate}\nBatch Number: {BatchNum}");
+            Console.WriteLine($"Medicine Code: {MedCode}\nMedicine Name: {MedName}\nManufacturer Name: {ManCode}\nUnit Price: {UnitPrice:c}\nQuantity in stock: {Quantity}\nManufactured Date: {ManDate}\nExpiry Date: {ExpDate}\nBatch Number: {BatchNum}");
         }
         public void Print(int Quantity)
         {
@@ -95,11 +78,13 @@ namespace LabTask11ClassesAndObject
         }
         public int Increase()
         {
+            int ItemsQuantity = 0;
             if (Quantity == 0)
             {
-                return Quantity + 50;
+                ItemsQuantity =  Quantity + 50;
             }
-            else return Quantity;
+               return ItemsQuantity;           
         }
+      
     }
 }

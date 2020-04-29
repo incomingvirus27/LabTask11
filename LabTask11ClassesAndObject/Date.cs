@@ -6,13 +6,14 @@ namespace LabTask11ClassesAndObject
 {
     class Date
     {
-        private int day;
+        
         private int month;
+        private int day;
         private int Year { get; set; }
-        public Date(int theDay, int theMonth, int theYear)
+        public Date(int theMonth, int theDay, int theYear)
         {
-            Day = theDay;
             Month = theMonth;
+            Day = theDay;
             Year = theYear;          
         }
 
